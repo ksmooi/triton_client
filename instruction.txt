@@ -1,0 +1,28 @@
+
+
+
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+# activate venv
+cd /home/ksmooi/GitHub/nvidia/triton_client
+source pyenv/bin/activate
+
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+# create venv
+cd /home/ksmooi/GitHub/nvidia/triton_client
+python3.12 -m venv pyenv
+
+source pyenv/bin/activate
+pip install tritonclient[all]
+
+deactivate
+
+
+
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+
