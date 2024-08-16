@@ -5542,3 +5542,4 @@ pyenv/lib64/python3.12/site-packages/zope/interface/tests/test_verify.py
 pyenv/lib64/python3.12/site-packages/zope/interface/verify.py
 pyenv/LICENSE.txt
 pyenv/pyvenv.cfg
+/pyenv
