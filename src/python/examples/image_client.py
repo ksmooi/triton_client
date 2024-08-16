@@ -56,7 +56,6 @@ def completion_callback(user_data, result, error):
 
 FLAGS = None
 
-
 def parse_model(model_metadata, model_config):
     """
     Check the configuration of a model to make sure it meets the
@@ -213,7 +212,9 @@ def postprocess(results, output_name, batch_size, supports_batching):
                 cls = "".join(chr(x) for x in result).split(":")
             else:
                 cls = result.split(":")
-            print("    {} ({}) = {}".format(cls[0], cls[1], cls[2]))
+            
+            # Add this line to see the raw output
+            print("Raw output:", cls)
 
 
 def requestGenerator(batched_image_data, input_name, output_name, dtype, FLAGS):
@@ -337,6 +338,20 @@ if __name__ == "__main__":
         default=None,
         help="Input image / Input folder.",
     )
+    
+    # Namespace(
+    #   verbose=False, 
+    #   async_set=False, 
+    #   streaming=False, 
+    #   model_name='mobilenetv4_hybrid-plan', 
+    #   model_version='', 
+    #   batch_size=1, 
+    #   classes=3, 
+    #   scaling='INCEPTION', 
+    #   url='192.168.1.150:8001', 
+    #   protocol='gRPC', 
+    #   image_filename='images/truck.jpg'
+    # )
     FLAGS = parser.parse_args()
 
     if FLAGS.streaming and FLAGS.protocol.lower() != "grpc":
