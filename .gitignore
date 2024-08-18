@@ -5543,3 +5543,16 @@ pyenv/lib64/python3.12/site-packages/zope/interface/verify.py
 pyenv/LICENSE.txt
 pyenv/pyvenv.cfg
 /pyenv
+/src/python/images
+/src/python/images
+*.jpg
+*.png
+src/python/images/building.jpg
+src/python/images/cat.jpg
+src/python/images/cat.png
+src/python/images/ship.jpg
+src/python/images/tiger.jpg
+src/python/images/tiger.png
+src/python/images/tree.jpg
+src/python/images/truck.jpg
+src/python/images/truck.png
