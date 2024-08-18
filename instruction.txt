@@ -9,6 +9,26 @@ cd /home/ksmooi/GitHub/nvidia/triton_client
 source pyenv/bin/activate
 
 
+deactivate
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+cd /home/ksmooi/GitHub/nvidia/triton_client/src/python
+
+# specify model and scaling (very important)
+python examples/image_client.py -m mobilenetv4_hybrid-plan -s INCEPTION images/tiger.jpg
+
+# specify batch and class
+python examples/image_client.py -m mobilenetv4_hybrid-plan -s INCEPTION -b 1 -c 3 images/tiger.jpg
+
+# specify URL and PROTOCOL
+python examples/image_client.py -m mobilenetv4_hybrid-plan -s INCEPTION -b 1 -c 3 -u 192.168.1.150:8000 -i HTTP images/truck.jpg
+python examples/image_client.py -m mobilenetv4_hybrid-plan -s INCEPTION -b 1 -c 3 -u 192.168.1.150:8001 -i gRPC images/truck.jpg
+
+---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
+
+
+
 ---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
 
 # create venv
@@ -16,12 +36,13 @@ cd /home/ksmooi/GitHub/nvidia/triton_client
 python3.12 -m venv pyenv
 
 source pyenv/bin/activate
+
+pip install --upgrade pip
+pip install opencv-python Pillow matplotlib scipy
+pip install torch torchvision torchaudio
 pip install tritonclient[all]
 
 deactivate
-
-
-
 
 ---8<------8<------8<------8<------8<------8<------8<------8<------8<------8<------8<---
 
