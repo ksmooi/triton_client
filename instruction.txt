@@ -38,7 +38,7 @@ python3.12 -m venv pyenv
 source pyenv/bin/activate
 
 pip install --upgrade pip
-pip install opencv-python Pillow matplotlib scipy
+pip install attrdict opencv-python Pillow matplotlib scipy
 pip install torch torchvision torchaudio
 pip install tritonclient[all]
 
